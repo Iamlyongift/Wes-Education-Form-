@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ✅ Loads Tailwind CSS for styling (Consider using a locally compiled version for production) -->
+  </head>
+  <body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <!-- ✅ Centers the form vertically and horizontally with a full-screen height -->
+
+    <div class="bg-white p-6 rounded-xl shadow-lg w-96">
+      <!-- ✅ Card-style container with padding, rounded corners, and a shadow -->
+
+      <div class="text-center mb-4">
+        <!-- ✅ Header Section -->
+
+        <div class="h-1 w-full bg-gray-200 rounded-full mb-2">
+          <div class="h-1 bg-blue-600 w-1/4 rounded-full"></div>
+          <!-- ✅ Progress bar (Only 25% filled) -->
+        </div>
+
+        <h2 class="text-xl font-semibold">Your Education 🎓</h2>
+        <!-- ✅ Title -->
+
+        <p class="text-gray-500 text-sm">
+          Tell us about your academic background
+        </p>
+        <!-- ✅ Subtitle -->
+
+        <p class="text-blue-600 text-xs font-semibold">
+          800 WESPoints remaining to unlock ESA
+        </p>
+        <!-- ✅ Reward notice (Consider explaining what "ESA" is for clarity) -->
+      </div>
+
+      <div
+        class="bg-blue-100 p-3 rounded-md text-blue-700 text-sm font-semibold mb-4"
+      >
+        🎁 Your Reward for this step is 200 WESPoints
+        <!-- ✅ Informational reward message -->
+      </div>
+
+      <form id="educationForm" class="w-full">
+        <!-- ✅ Form Starts Here -->
+
+        <!-- 🔹 Name of Institution -->
+        <label class="block mb-2 text-sm font-medium"
+          >Name of Institution *</label
+        >
+        <select class="w-full p-2 border rounded-md bg-gray-100 text-gray-600">
+          <option>WESOnline</option>
+          <!-- ✅ Only one option is available. If it's the only valid choice, 
+               consider making it a read-only input instead -->
+        </select>
+
+        <!-- 🔹 Journey Level -->
+        <label class="block mt-4 mb-2 text-sm font-medium"
+          >Where are you on your journey? *</label
+        >
+        <select class="w-full p-2 border rounded-md bg-gray-100 text-gray-600">
+          <option class="flex justify-between">100 <span>level</span></option>
+          <!-- ⚠️ Invalid HTML: `<option>` does not support `flex` or `<span>`. 
+               Instead, use something like `100 Level` -->
+        </select>
+
+        <div class="w-full flex justify-between gap-4">
+          <!-- ✅ Two-column layout for Field of Study & GPA -->
+
+          <div class="w-1/2">
+            <label class="block mt-4 mb-2 text-sm font-medium"
+              >Field Of Study *</label
+            >
+            <input
+              type="text"
+              class="w-full p-2 border rounded-md bg-gray-100 text-gray-600"
+              value="Chemistry"
+              readonly
+            />
+            <!-- ✅ Read-only input for pre-filled field of study -->
+          </div>
+
+          <div class="w-1/2">
+            <label class="block mt-4 mb-2 text-sm font-medium">GPA</label>
+            <input
+              type="text"
+              class="w-full p-2 border rounded-md bg-gray-100 text-gray-600"
+              placeholder="----"
+            />
+            <!-- ✅ GPA input (Consider adding `type="number"` and setting min/max values) -->
+          </div>
+        </div>
+
+        <!-- 🔹 Interest Areas -->
+        <label class="block mt-4 mb-2 text-sm font-medium"
+          >What areas interest you most? *</label
+        >
+        <select class="w-full p-2 border rounded-md bg-gray-100 text-gray-600">
+          <option>Business & Management</option>
+          <!-- ✅ Consider adding more options or making it a multi-select field -->
+        </select>
+
+        <!-- 🔹 Buttons Section -->
+        <div class="flex justify-between items-center mt-6">
+          <button type="button" class="text-gray-500 text-sm">
+            Skip For Now
+          </button>
+          <!-- ✅ Skip button (Might need an action handler) -->
+
+          <button
+            type="submit"
+            class="bg-blue-600 text-white px-6 py-2 rounded-md"
+          >
+            Continue
+          </button>
+          <!-- ✅ Submit button with clear styling -->
+        </div>
+      </form>
+    </div>
+
+    <script src="js/script.js"></script>
+    <!-- ✅ External JavaScript file (Make sure it handles form submission) -->
+  </body>
+</html>
